@@ -1,0 +1,96 @@
+body {
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.6;
+	margin: 0;
+	padding: 0;
+	background-color: #f2f2f2;
+}
+.container {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 20px;
+	background-color: #fff;
+	box-shadow: 0 0 10px rgba(0,0,0,0.3);
+	border-radius: 5px;
+}
+h1 {
+	font-size: 32px;
+	margin: 0 0 20px;
+}
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+label {
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+input[type="file"] {
+	border: none;
+	padding: 10px;
+	margin: 0 0 20px;
+	background-color: #f2f2f2;
+	box-shadow: 0 0 5px rgba(0,0,0,0.1);
+	border-radius: 5px;
+	transition: all 0.3s;
+	cursor: pointer;
+	max-width: 100%;
+	text-align: center;
+}
+input[type="file"]:hover,
+input[type="file"]:focus {
+	background-color: #e8e8e8;
+	box-shadow: 0 0 10px rgba(0,0,0,0.2);
+	outline: none;
+}
+button[type="submit"] {
+	background-color: #4CAF50;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	margin: 0 0 20px;
+	border-radius: 5px;
+	box-shadow: 0 0 5px rgba(0,0,0,0.1);
+	cursor: pointer;
+	font-size: 18px;
+	font-weight: bold;
+	transition: all 0.3s;
+}
+button[type="submit"]:hover,
+button[type="submit"]:focus {
+	background-color: #2e8b57;
+	box-shadow: 0 0 10px rgba(0,0,0,0.2);
+	outline: none;
+}
+
+
+/* table styling */
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+    max-width: 800px; /* set a max width for the table */
+    width: 100%; /* make sure the table fills the container */
+}
+
+td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+th {
+    background-color: #4CAF50;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+

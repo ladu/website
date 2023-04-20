@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Excel Sheet Upload</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+	<div class="container">
+		<h1>Upload Excel Sheet</h1>
+		<form action="/upload" method="post" enctype="multipart/form-data">
+			<label for="inputFile">Choose an Excel file to upload:</label>
+			<input type="file" name="inputFile" id="inputFile">
+			<button type="submit">Upload</button>
+		</form>
+	</div>
+</body>
+</html>
