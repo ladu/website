@@ -3,15 +3,49 @@
 <head>
 	<title>Excel Sheet Upload</title>
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('#example').DataTable();
+		} );
+	</script>
 </head>
 <body>
-	<div class="container">
-		<h1>Upload Excel Sheet</h1>
-		<form action="/upload" method="post" enctype="multipart/form-data">
-			<label for="inputFile">Choose an Excel file to upload:</label>
-			<input type="file" name="inputFile" id="inputFile">
-			<button type="submit">Upload</button>
-		</form>
-	</div>
+	<h1>Excel Sheet Upload</h1>
+	{% if error %}
+		<div class="error">{{ error }}</div>
+	{% endif %}
+
+	<form method="post" action="{{ url_for('upload') }}" enctype="multipart/form-data">
+		<label for="file">Select a file:</label>
+		<input type="file" id="file" name="file">
+		<button type="submit">Upload</button>
+	</form>
+	{% if data %}
+		<table id="example" class="display">
+			<thead>
+				<tr>
+				{% for col in columns %}
+					<th>{{ col.title }}</th>
+				{% endfor %}
+				</tr>
+			</thead>
+			<tbody>
+				{% for row in data %}
+				<tr>
+					{% for col in columns %}
+					<td>{{ row[col.title] }}</td>
+					{% endfor %}
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	{% endif %}
+	<form method="POST" action="{{ url_for('upload') }}" enctype="multipart/form-data">
+		<button type="submit" name="action" value="Solve">Solve</button>
+	</form>
 </body>
 </html>
+

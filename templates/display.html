@@ -9,11 +9,12 @@
 <head>
 	<title>Excel Sheet Display</title>
 </head>
+
 <body>
-	<h1>Excel Sheet Data</h1>
-	{% for table in tables %}
-		{{ table|safe }}
-	{% endfor %}
+    {% for i in range(tables|length) %}
+        <h1>{{ titles[i] }}</h1>
+        {{ tables[i]|safe }}
+    {% endfor %}
 </body>
 </html>
 
